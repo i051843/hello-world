@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: ${SPRING_CONFIG_ENVIRONMENT}
+  profiles:
+    active: ${SPRING_CONFIG_PROFILE}
+  cloud:
+    config:
+      enabled: ${SPRING_CONFIG_ENABLED:false}
+      allowOverride: false
+      failFast: true
+      overrideNone: false
+      overrideSystemProperties: false
+      uri: ${SPRING_CLOUD_CONFIG_URI:http://config-service:8081}
+      label: ${SPRING_CLOUD_CONFIG_LABEL:master}
+
+encrypt:
+  failOnError: true
