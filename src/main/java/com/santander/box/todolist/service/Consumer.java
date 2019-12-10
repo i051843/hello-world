@@ -16,10 +16,10 @@ public class Consumer {
 
     private static final Logger logger = LoggerFactory.getLogger(Consumer.class);
 
-    //@KafkaListener(topics = "${app.topic.input}")
-    @KafkaListener(topicPartitions =
-            { @TopicPartition(topic = "${app.topic.input}",
-                    partitionOffsets = @PartitionOffset(partition = "0", initialOffset = "0"))})
+    @KafkaListener(topics = "${app.topic.input}")
+    //@KafkaListener(topicPartitions =
+      //      { @TopicPartition(topic = "${app.topic.input}",
+        //            partitionOffsets = @PartitionOffset(partition = "0", initialOffset = "0"))})
     public void listen(ConsumerRecord<String, GenericRecord> records) {
         System.out.println("Received Message in group: " + records.value());
     }
