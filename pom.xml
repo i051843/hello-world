@@ -14,6 +14,19 @@
 	<name>TODO-List</name>
 	<description>TODO List logic for the BOX application</description>
 
+	<repositories>
+	<repository>
+		<id>confluent</id>
+		<url>http://packages.confluent.io/maven/</url>
+		<releases>
+			<enabled>true</enabled>
+		</releases>
+		<snapshots>
+			<enabled>true</enabled>
+		</snapshots>
+	</repository>
+	</repositories>
+	
 	<properties>
 		<java.version>1.8</java.version>
 		<avro.version>1.8.2</avro.version>
