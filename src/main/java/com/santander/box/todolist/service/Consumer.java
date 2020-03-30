@@ -1,4 +1,4 @@
-package com.santander.box.todolist.service;
+/*package com.santander.box.todolist.service;
 
 import org.apache.avro.generic.GenericRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -25,3 +25,4 @@ public class Consumer {
     }
 
 }
+*/
