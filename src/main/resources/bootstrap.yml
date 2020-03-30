@@ -27,10 +27,10 @@ spring:
       test-on-borrow: true
     continue-on-error: true
     driver-class-name: oracle.jdbc.OracleDriver
-    url: jdbc:oracle:thin:@//test.corp:1528/test
-    username: test
-    password: test
-    database: test
+    url: jdbc:mysql://database-1.cshtwictl9dg.us-east-1.rds.amazonaws.com:3306/database-1
+    username: admin
+    password: adminadmin
+    database: database-1
 
 app:
   topic:
