@@ -1,14 +1,48 @@
 spring:
-  application:
-    name: ${SPRING_CONFIG_PROFILE}
-  cloud:
-    config:
-      allowOverride: false
-      failFast: true
-      overrideNone: false
-      overrideSystemProperties: false
-      uri: ${SPRING_CLOUD_CONFIG_URI:http://config-service:8081}
-      label: ${SPRING_CLOUD_CONFIG_LABEL:master}
+  kafka:
+    consumer:
+      group-id: "todo-list-consumer"
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      bootstrap-servers: "localhost:9092"
+    properties:
+      schema.registry.url: http://localhost:8070
+      value.subject.name.strategy: io.confluent.kafka.serializers.subject.RecordNameStrategy
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.Oracle12cDialect
+    hibernate:
+      ddl-auto: none
+      use-new-id-generator-mappings: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.Oracle12cDialect
+        # allow JPA to send nulls in procedures, this is not activated by default
+        proc:
+          param_null_passing: true
+    mvc:
+      dispatch-options-request: true
+  datasource:
+    tomcat:
+      test-on-borrow: true
+    continue-on-error: true
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@//test.corp:1528/test
+    username: test
+    password: test
+    database: test
 
-encrypt:
-  failOnError: true
+app:
+  topic:
+    input: dev01.streaming.mrktdt.box.todolist
+
+schemaRegistry:
+  objectSchema: com.santander.isban.box.todolist.Task
+  schemaRegistryUrl: http://localhost:8070
+
+integration:
+  sigom-crud:
+    baseUrl: http://localhost:8099
+  
+server:
+  port: 8090
