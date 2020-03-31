@@ -31,6 +31,6 @@ public class TestController {
     public ResponseEntity<List<TodoList>> findAll() {
   
         List<TodoList> ret = repository.findAll();
-        return new ResponseEntity<>(ret, HttpStatus.OK)
+        return new ResponseEntity<>(ret, HttpStatus.OK);
     }
 }
