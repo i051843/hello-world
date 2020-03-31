@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
 public interface TodoListRepository extends JpaRepository<TodoList, Double> {
 
     @Query(nativeQuery = true,
-            value = "select GOM_GLB_RUN.F___SEQUENCE('T_PGT_TODO_LIST_S') from dual")
+            value = "select F___SEQUENCE() from dual")
     public Double getNextSequence();
 }
