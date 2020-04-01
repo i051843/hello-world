@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "T_PGT_TODO_LIST_S")
+@Table(name = "T_BOX_TODO_LIST_S")
 public class TodoList {
 
     @Id
